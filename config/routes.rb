@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-
-  get 'users/show'
-
-  root 'pages#home'
+  
+  root 'posts#index'
   
   devise_for :users,
     path: '',
