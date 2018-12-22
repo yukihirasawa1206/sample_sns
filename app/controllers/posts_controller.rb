@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_post, only: [:show]
+  before_action :find_post, only: [:show, :destroy]
   
   def index
     @posts = Post.all.limit(10).includes(:photos, :user).order('created_at desc')
@@ -25,6 +25,21 @@ class PostsController < ApplicationController
   
   def show
     @photos = @post.photos
+  end
+  
+  def destroy
+    if @post.user == current_user
+      if @post.destroy
+        redirect_to posts_path
+        flash[:notice] = "Post deleted!"
+      else
+        redirect_to posts_path
+        flash[:alert] = "Something went wrong ..."
+      end
+    else
+      redirect_to root_path
+      flash[:danger] = "You don't have permission to do that!"
+    end
   end
   
   private
