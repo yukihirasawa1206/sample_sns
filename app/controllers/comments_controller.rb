@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
   
   def create
-    @comment = current_user.comments.build(comment_parmas)
+    @comment = current_user.comments.build(comment_params)
     @post = @comment.post
     if @comment.save
       respond_to :js
