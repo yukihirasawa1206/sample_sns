@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.all.limit(10).includes(:photos, :user, :likes).
       order('created_at desc')
     @post = Post.new
+    @comment = Comment.new
   end
   
   def create
