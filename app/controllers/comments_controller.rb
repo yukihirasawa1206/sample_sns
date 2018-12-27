@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   def destroy
     # @comment = Comment.find_by(id: params[:id])主キーの場合findで良い
     @comment = Comment.find(params[:id])
+    @post = @comment.post
     if @comment.destroy  
       respond_to :js
     else

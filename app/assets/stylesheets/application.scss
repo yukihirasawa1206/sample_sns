@@ -241,6 +241,10 @@ footer .nav-item{
     display: inline-block;
 }
 
+.post-card .btn {
+    width: 120px;
+}
+
 .no-text-decoration:hover {
     text-decoration: none;
     color: #262626;
@@ -285,6 +289,11 @@ footer .nav-item{
         height: 30px;
         opacity: 1;
         width: 30px;
+    }
+    
+    .post-content {
+        font-size: 14px;
+        margin-top: 10px;
     }
     
     .love {

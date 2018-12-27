@@ -15,7 +15,9 @@
       <% end %>
     </div>
     <div class="card-body">
-      <%= render 'photos', {post: post}  %>
+      <%= link_to post_path(post) do %>
+        <%= render 'photos', {post: post}  %>
+      <% end %>
       <div class="row actions">
         <div id="like-icon-post-<%= post.id.to_s %>">
           <%= render 'likes/like_icon', {is_liked: post.is_liked(current_user), post: post} %>
@@ -34,11 +36,7 @@
       class: "light-color post-time no-text-decoration" %>
       <hr>
       <div class="row actions">
-        <form action"#" class="w-100">
-          <div>
-            <textarea class="form-control comment-input border-0" placeholder="Add a comment ..." rows="1"></textarea>
-          </div>
-        </form>
+        <%= render 'comment_form', {post: post, comment: @comment} %>
       </div>
     </div>
   </div>
