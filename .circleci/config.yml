@@ -1,12 +1,7 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
           RAILS_ENV: test
@@ -15,31 +10,20 @@ jobs:
       - image: circleci/postgres:9.6.2-alpine
         environment:
           POSTGRES_USER: root
-          POSTGRES_DB: sample_sns_test
           PGDATA: /dev/shm/pgdata/data
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-
     steps:
       - checkout
-
-      # Download and cache dependencies
+      
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
+          
       - run:
           name: install dependencies
-          command: bundle ckeck --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
-            
-      - run: sudo apt install -y postgresql-client || true
-      
-      - run: sudo apt-get install -y libpq-dev
-      
+          command: bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
+          
       - save_cache:
           paths:
             - ./vendor/bundle
@@ -49,11 +33,9 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://127.0.0.1:5432 -timeout 120s
 
-      # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
-      # run tests!
       - run:
           name: run tests
           command: |
@@ -66,7 +48,6 @@ jobs:
                             --format progress \
                             $TEST_FILES
 
-      # collect reports
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
