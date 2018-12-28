@@ -1,0 +1,4 @@
+$('#bookmark-icon-post-<%= @post.id.to_s %>').
+  html('<%= link_to "Delete Bookmark", bookmark_path(@bookmark), method: :delete, remote: true,
+  class: "core-sprite bookmarked hide-text" %>');
+console.log('Create bookmark successfull.');
