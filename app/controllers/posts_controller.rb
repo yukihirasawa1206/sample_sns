@@ -3,10 +3,11 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :destroy]
   
   def index
-    @posts = Post.all.limit(10).includes(:photos, :user, :likes).
+    @posts = Post.all.limit(10).includes(:photos, :user, :likes, :bookmarks).
       order('created_at desc')
     @post = Post.new
     @comment = Comment.new
+    @is_bookmarked = @post.is_bookmarked(current_user)
   end
   
   def create
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
     @likes = @post.likes.includes(:user)
     @is_liked = @post.is_liked(current_user)
     @comment = Comment.new
+    @is_bookmarked = @post.is_bookmarked(current_user)
   end
   
   def destroy
