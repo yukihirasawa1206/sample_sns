@@ -287,9 +287,5 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-  if Rails.env == 'development' || 'test'
     config.omniauth :twitter, ENV["APP_ID"], ENV["APP_SECRET"]
-  elsif Rails.env == 'production'
-    config.omniauth :twitter, APP_ID, APP_SECRET
-  end
 end
