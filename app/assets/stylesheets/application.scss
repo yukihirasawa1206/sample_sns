@@ -3,400 +3,428 @@
 @import "dropzone/dropzone";
 
 body {
-    background-color: #fafafa;
-    font-size: 14px;
-    color: #262626;
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #262626;
 }
 
 .navbar {
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0,0,0,.0975);
-    height: 77px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  height: 77px;
+  .modal-content {
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    .modal-header {
+      background-color: #343a40;
+      .modal-title{
+        color: #fff;
+      }
+    }
+  }
 }
 .core-sprite {
-    background-image: image-url("core-sprite-2x.png");
-    background-size: 405px 379px;
-    background-repeat: no-repeat;
+  background-image: image-url("core-sprite-2x.png");
+  background-size: 405px 379px;
+  background-repeat: no-repeat;
 }
 
 .navbar-brand {
-    background-position: -176px 0;
-    height: 35px;
-    width: 176px;
+  font-size: 30px;
+  line-height: 30px;
+  width: 176px;
 }
 
 .hide-text {
-    display: block;
-    overflow: hidden;
-    text-indent: 110%;
-    white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
 }
 
 .explore-icon {
-    background-position: -50px -355px;
-    height: 24px;
-    width: 24px;
+  background-position: -50px -355px;
+  height: 24px;
+  width: 24px;
 }
 
 .notification-icon {
-    background-position: -353px -298px;
-    height: 24px;
-    width: 24px;
+  background-position: -353px -298px;
+  height: 24px;
+  width: 24px;
 }
 
 
 .profile-icon {
-    background-position: -308px -176px;
-    height: 24px;
-    width: 24px;
+  background-position: -308px -176px;
+  height: 24px;
+  width: 24px;
 }
 
 .nav-item:not(:first-child) {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .box {
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 10px;
-    padding: 10px 0;
-    margin: 0 0 10px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin: 0 0 10px;
 }
 
 .brand-name-img {
-    background-position: 0 0;
-    height: 51px;
-    width: 175px;
+  background-position: 0 0;
+  height: 51px;
+  width: 175px;
 }
 
 .landing-left {
-    .dummy-phone {
-        background-image: image-url("dummy-phone-2x.png");
-        background-repeat: no-repeat;
-        background-position: right 0;
-        background-size: 454px 618px;
-        position: relative;
-        height: 618px;
-        margin-left: -35px;
-        margin-right: -15px;
+  .introduce {
+    .h1 {
+      line-height: 2.5rem;
     }
-    .screen-shot {
-        position: absolute;
-        top: 99px;
-        right: 63px;
-        .item {
-            position: absolute;
-        }
-    }
+    width: 600px;
+    height: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    .discription {
+      p{
+        margin-bottom: 0;
+      }
+      margin-top: 10px;
+      padding:20px 10px 10px;
+    } 
+  }  
 }
 
 .landing-right {
-    .form-login {
-        width: 350px;
-        form {
-            padding: 0 40px;
-            .btn-primary {
-                width: 100%;
-                line-height: 14px;
-                font-size: 14px;
-                font-weight: 600;
-            }
-            input {
-                border: 1px solid #efefef;
-            }
-            .form-check-label {
-                padding: 0;
-                font-size: 15px;
-                color: #262626;
-            }
-        }
-        .brand-name-img {
-            margin: 22px auto 8px;
-        }
+  .form-login {
+    width: 450px;
+    form {
+      padding: 0 40px;
+      .btn-dark{
+        margin-top: 1rem;
+        height: 38px;
+        width: 100%;
+        line-height: 14px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      input {
+        border: 1px solid #efefef;
+      }
+      .form-check-label {
+        padding: 0;
+        font-size: 15px;
+        color: #262626;
+      }
     }
-    .redirect-links {
-        window: 350px
+    .brand-name-img {
+      margin: 22px auto 8px;
     }
+  }
+  .redirect-links {
+    window: 350px
+  }
 }
 
-footer .nav-item{
+footer {
+    .nav-item {
     color: #003569 !important;
     font-size: 12px;
     font-weight:bold;
+  }
 }
 
 .light-color {
-    color: #999;
+  color: #999;
 }
 
 .carousel-fade {
-    .carousel-item.active {
-        opacity: 1;
-        display: block;
-    }
-    .carousel-item {
-        transition: opacity 0.6s ease-in-out;
-        opacity: 0;
-        position: relative;
-        display: block;
-    }
-    .carousel-item:not(.active) {
-        position: absolute;
-        top: 0px;
-    }
+  .carousel-item.active {
+    opacity: 1;
+    display: block;
+  }
+  .carousel-item {
+    transition: opacity 0.6s ease-in-out;
+    opacity: 0;
+    position: relative;
+    display: block;
+  }
+  .carousel-item:not(.active) {
+    position: absolute;
+    top: 0px;
+  }
 }
 
 .profile-wrapper {
-    padding: 60px 0;
-    border-bottom: 1px solid "efefef";
-    .username {
-        font-size: 32px;
-        line-height: 40px;
-        font-weight: 200;
+  padding: 60px 0;
+  border-bottom: 1px solid "efefef";
+  .username {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 200;
     }
-    .email {
-        font-size: 16px;
-        font-weight: bold;
+  .email {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .round-img {
+    border-radius: 50%;
+  }
+  .modal-content {
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    .modal-header {
+      background-color: #343a40;
+      .modal-title{
+        color: #fff;
+      }
     }
-    .round-img {
-        border-radius: 50%;
-    }
+  }
 }
 
+.post-card {
+  .card-header {
+    background-color: #343a40;
+    color: #fff;
+  }
+}
 .common-btn {
-    height: 28px;
-    line-height: 24px;
-    padding: 0 24px;
-    border-color: #dbdbdb;
-    font-size: 14px;
+  height: 28px;
+  line-height: 24px;
+  padding: 0 24px;
+  border-color: #dbdbdb;
+  font-size: 14px;
 }
 
 .edit-profile-btn {
-    margin: 5px 0 0 15px;
-    font-weight: bold;
+  margin: 5px 0 0 15px;
+  font-weight: bold;
 }
 
 .edit-profile-wrapper {
-    margin: 30px 0 0;
+  margin: 30px 0 0;
     
-    .left-col {
-        border: 1px solid #dbdbdb;
-        padding: 0;
-        background-color: white;
-    }
+  .left-col {
+    border: 1px solid #dbdbdb;
+    padding: 0;
+    background-color: white;
+  }
     
-    .list-group-item {
-        border: none;
-        color: #262626;
-        border-radius: 0;
-        font-size: 16px;
-        border-left: 2px solid transparent;
-    }
+  .list-group-item {
+    border: none;
+    color: #262626;
+    border-radius: 0;
+    font-size: 16px;
+    border-left: 2px solid transparent;
+  }
     
-    .list-group-item:first-child {
-        font-weight: bold;
-        border-left: 5px solid #343a40;
-    }
+  .list-group-item:first-child {
+    font-weight: bold;
+    border-left: 5px solid #343a40;
+  }
     
-    .list-group-item:not(:first-child):hover {
-        border-left: 5px solid #343a40;
-    }
+  .list-group-item:not(:first-child):hover {
+    border-left: 5px solid #343a40;
+  }
     
-    .right-col {
-        border: 1px solid #dbdbdb;
-        background-color: white;
+  .right-col {
+    border: 1px solid #dbdbdb;
+    background-color: white;
         
-        .round-img {
-            border-radius: 50%;
-        }
+    .round-img {
+        border-radius: 50%;
+      }
         
-        .username-img {
-            margin: 32px 0 20px;
+    .username-img {
+      margin: 32px 0 20px;
             
-            .username {
-                margin-top: 16px;
-                font-size: 32px;
-                line-height: 40px;
-                font-weight: 200;
-            }
-        }
-        .form-group {
-            font-size: 16px;
-        }
-        .btn {
-            width: 60%;
-        }
+      .username {
+        margin-top: 16px;
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 200;
+      }
     }
+    .form-group {
+      font-size: 16px;
+    }
+    .btn {
+      width: 60%;
+    }
+  }
 }
 
 .setting {
-    margin: 7px 0 0 10px;
-    background-color: transparent;
-    background-position: -125px -355px;
-    height: 24px;
-    width: 25px;
-    border: none;
+  margin: 7px 0 0 10px;
+  background-color: transparent;
+  background-position: -125px -355px;
+  height: 24px;
+  width: 25px;
+  border: none;
 }
 
 .setting:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .post-author-icon {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .upload-photos-icon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dz-preview.dz-image-preview {
-    margin: 2px;
+  margin: 2px;
 }
 
 .dz-image {
-    border-radius: 0px !important;
-    
-    img {
-        width: 100%;
-    }
+  border-radius: 0px !important;
+  
+  img {
+    width: 100%;
+  }
 }
 
 .dz-remove {
-    @extend .core-sprite;
-    @extend .hide-text;
-    position: absolute;
-    top: 9px;
-    right: 5px;
-    z-index: 20;
-    width: 18px;
-    height: 18px;
-    background-position: -386px -25px;
-    opacity: 0;
-    -webkit-transition: opacity 0.2s liner;
-    transition: opacity 0.2s liner;
+  @extend .core-sprite;
+  @extend .hide-text;
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  z-index: 20;
+  width: 18px;
+  height: 18px;
+  background-position: -386px -25px;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s liner;
+  transition: opacity 0.2s liner;
 }
 
 .dropzone .dz-preview:hover .dz-remove {
-    opacity: 1;
+  opacity: 1;
 }
 
 .upload-photos-icon {
-    height: 120px;
-    width: 120px;
-    border: 2px dashed #dddfe2;
-    border-radius: 2px;
-    padding: 48px;
-    margin: 2px;
-    display: inline-block;
+  height: 120px;
+  width: 120px;
+  border: 2px dashed #dddfe2;
+  border-radius: 2px;
+  padding: 48px;
+  margin: 2px;
+  display: inline-block;
 }
 
 .post-card .btn {
-    width: 120px;
+  width: 120px;
 }
 
 .no-text-decoration:hover {
-    text-decoration: none;
-    color: #262626;
+  text-decoration: none;
+  color: #262626;
 }
 
 .normal-color {
-    color: #262626;
+  color: #262626;
 }
 
 .post {
-    .card-header {
-        background-color: white;
-    }
+  .card-header {
+    background-color: white;
+  }
 
-    .card-body {
-        padding: 5px 16px 5px;
-    }
+  .card-body {
+    padding: 5px 16px 5px;
+  }
     
-    .actions {
-        margin: 12px 0;
-    }
+  .actions {
+    margin: 12px 0;
+  }
     
-    .post-time {
-        margin-top: 5px;
-        font-size: 10px;
-    }
+  .post-time {
+    margin-top: 5px;
+    font-size: 10px;
+  }
     
-    .comment-input {
-       font-size: 14px; 
-       resize: none;
-    }
+  .comment-input {
+    font-size: 14px; 
+    resize: none;
+  }
     
-    .previous-btn {
-        background-position: -281px -280px;
-        height: 30px;
-        opacity: 1;
-        width: 30px;
-    }
+  .previous-btn {
+    background-position: -281px -280px;
+    height: 30px;
+    opacity: 1;
+    width: 30px;
+  }
     
-    .next-btn {
-        background-position: -353px 0px;
-        height: 30px;
-        opacity: 1;
-        width: 30px;
-    }
+  .next-btn {
+    background-position: -353px 0px;
+    height: 30px;
+    opacity: 1;
+    width: 30px;
+  }
     
-    .post-content {
-        font-size: 14px;
-        margin-top: 10px;
-    }
+  .post-content {
+    font-size: 14px;
+    margin-top: 10px;
+  }
     
-    .love {
-        background-position: -325px -329px;
-        height: 24px;
-        width: 24px;
-    }
+  .love {
+    background-position: -325px -329px;
+    height: 24px;
+    width: 24px;
+  }
     
-    .loved {
-        @extend .love;
-        background-position: -200px -330px;
-    }
+  .loved {
+    @extend .love;
+    background-position: -200px -330px;
+  }
     
-    .comment {
-        @extend .love;
-        background-position: -258px -175px;
-    }
+  .comment {
+    @extend .love;
+    background-position: -258px -175px;
+  }
     
-    .bookmark {
-        @extend .love;
-        background-position: -150px -355px;
-    }
+  .bookmark {
+    @extend .love;
+    background-position: -150px -355px;
+  }
     
-    .bookmarked {
-        @extend .love;
-        background-position: -353px -273px;
-    }
+  .bookmarked {
+    @extend .love;
+    background-position: -353px -273px;
+  }
 }
 
 .comment-list {
-    height: 310px;
-    overflow: auto;
+  height: 310px;
+  overflow: auto;
 }
 
 .post-show-img {
-    background-color: "fafafa";
-    margin: -10px;
+  background-color: "fafafa";
+  margin: -10px;
 }
 
 .delete-post-icon {
-    color: #262626;
-    font-size: 20px;
+  color: #262626;
+  font-size: 20px;
 }
 
 .delete-comment {
-    width: 11px;
-    height: 11px;
-    background-position: -216px -112px;
-    float: right;
-    margin: 5px 0 0 10px;
+  width: 11px;
+  height: 11px;
+  background-position: -216px -112px;
+  float: right;
+  margin: 5px 0 0 10px;
 }
-
-

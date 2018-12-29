@@ -1,8 +1,8 @@
 <div class="d-flex flex-column align-items-center mt-3">
   <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
     <div class="card">
-      <div class="card-header">
-        Create Post
+      <div class="card-header text-center">
+        <strong>Create Post</strong>
       </div>
       <div class="card-body">
         <%= form_for @post, html: {multipart: true, class: "dropzone upload-images p-0 border-0"} do |f| %>
@@ -23,7 +23,7 @@
               <i class="fa fa-plus fa-2x" aria-hidden="true" style="color:#dddfe2"></i>
             </div>
           </div>
-          <%= f.submit "Create Post", class: "btn btn-dark" %>
+          <%= f.submit "Post", class: "btn btn-dark" %>
         <% end %>
       </div>
     </div>
