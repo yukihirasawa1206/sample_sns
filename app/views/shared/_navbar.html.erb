@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-    <%= link_to "Icon", root_path, class: "navbar-brand core-sprite hide-text" %>
+    <%= link_to "SAMPLE SNS", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,7 +13,23 @@
           <a class="nav-link core-sprite explore-icon hide-text" href="#">Explore</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link core-sprite notification-icon hide-text" href="#">Notification</a>
+          <a class="nav-link core-sprite notification-icon hide-text" data-toggle="modal" data-target="#notification"></a>
+            <!-- Modal -->
+            <div class="modal fade" id="notification" tabindex="-1" role="dialog" aria-labelledby="notificationLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content ml-auto">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="notificationLabel">My Favorite Post</h5>
+                  </div>
+                  <div class="modal-body">
+                    <p>現在通知はございません。</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </li>
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
