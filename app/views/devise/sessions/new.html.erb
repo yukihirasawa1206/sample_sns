@@ -1,10 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 landing-left d-flex align-items-center">
-      <div class="introduce mt-5">
+    <div class="col-md-6 col-12 landing-left d-flex align-items-center">
+      <div class="introduce mt-5 w-100 h-100">
         <h1 class="text-center">SAMPLE SNS</h1>
         <div class="discription">
-          
           <strong><p>実装した主な機能</p></strong>
           <li>ユーザー登録機能</li>
           <li>認証機能(Twitterによる認証も可能)</li>
@@ -19,19 +18,20 @@
           <li>CircleCIを導入(GitHubと連携させブランチの保護設定を行う。
           testがパスしなければmasterブランチにmergeできない設定。
           今後は自動でデプロイまでできるような環境を構築する予定。)</li>
-          
           <strong><p>今後の実装予定機能</p></strong>
           <li>フォロー機能</li>
           <li>検索機能の追加</li>
           <li>CircleCIによる本番環境への自動デプロイ</li>
         </div>
-        
-        </div>
       </div>
-    <div class="col-lg-6 landing-right text-center d-flex align-items-center">
-      <div>
+    </div>
+    <div class="col-md-6 col-12 landing-right text-center d-flex align-items-center">
+      <div class="w-100 h-100">
         <div class="form-login box mt-5">
-          <h3 class="my-3">Log in</h3>
+          <h2 class="my-3">Log in</h2>
+          <h5 class="light-color"><strong>Log in to see photos <br> from your friends.</strong></h5>
+          
+          <hr>
           
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
