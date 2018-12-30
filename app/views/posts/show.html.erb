@@ -19,12 +19,12 @@
             <i class="fa fa-trash-alt" aria-hidden="true"></i>
           <% end %>
         <% end %>
-        <% if @post.content.present? %>
-          <div class="post-content">
-            <span><%= @post.content %></span>
-          </div>
-        <% end %>
       </div>
+      <% if @post.content.present? %>
+      <div class="post-content">
+        <span><%= @post.content %></span>
+      </div>
+      <% end %>
       <hr>
       <div class="comment-list py-2">
         <div id="comment-post-<%= @post.id.to_s %>">
