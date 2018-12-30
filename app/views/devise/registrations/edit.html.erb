@@ -12,47 +12,45 @@
       <%= render 'devise/shared/devisemes' %>
       
       <div class="row username-img">
-        <div class="col-sm-3">
-        </div>
-        <div class="col-sm-8 row">
+        <div class="col-3 text-sm-right">
             <%= image_tag avatar_url(@user), width: '78', height: '78', class: "round-img" %>
-          <div class="col-sm-8">
+        </div>
+        <div class="col-8 text-center">
             <p class="username"><strong><%= @user.name %></strong></p>
-          </div>
         </div>
       </div>
       
-      <div class="form-group row">
-        <%= f.label :name, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
-        <%= f.text_field :name, autofocus: true, class:"form-control col-sm-8" %>
+      <div class="form-group row d-flex justify-content-center">
+        <%= f.label :name, class: "col-sm-3 col-12 col-form-label text-sm-right font-weight-bold" %>
+        <%= f.text_field :name, autofocus: true, class:"form-control col-sm-8 col-11" %>
       </div>
-      <div class="form-group row">
-        <%= f.label :email, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
-        <%= f.email_field :email, autocomplete: "email", class: "form-control col-sm-8" %>
+      <div class="form-group row d-flex justify-content-center">
+        <%= f.label :email, class: "col-sm-3 col-12 col-form-label text-sm-right font-weight-bold" %>
+        <%= f.email_field :email, autocomplete: "email", class: "form-control col-sm-8 col-11" %>
       </div>
-      <div class="form-group row">
-        <%= f.label :website, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
-        <%= f.text_field :website, class:"form-control col-sm-8" %>
+      <div class="form-group row d-flex justify-content-center">
+        <%= f.label :website, class: "col-sm-3 col-12 col-form-label text-sm-right font-weight-bold" %>
+        <%= f.text_field :website, class:"form-control col-sm-8 col-11" %>
       </div>
-      <div class="form-group row">
-        <%= f.label :bio, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
-        <%= f.text_field :bio, class:"form-control col-sm-8" %>
+      <div class="form-group row d-flex justify-content-center">
+        <%= f.label :bio, class: "col-sm-3 col-12 col-form-label text-sm-right font-weight-bold" %>
+        <%= f.text_field :bio, class:"form-control col-sm-8 col-11" %>
       </div>
       <div class="row">
-        <div class="col-sm-3"></div>
-        <i>* (You can leave blank if you don't want to change password.)</i><br />
+        <div class="col-3"></div>
+        <i class="ml-sm-5 ml-2">* (You can leave blank if you don't want to change password.)</i><br />
       </div>
-      <div class="form-group row">
-        <%= f.label :password, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
-        <%= f.password_field :password, autofocus: false, class: "form-control col-sm-8"%>
+      <div class="form-group row d-flex justify-content-center">
+        <%= f.label :password, class: "col-sm-3 col-12 col-form-label text-sm-right font-weight-bold" %>
+        <%= f.password_field :password, autofocus: false, class: "form-control col-sm-8 col-11"%>
       </div>
-      <div class="form-group row">
-        <%= f.label :password_confirmation, class: "col-sm-3 col-form-label text-right font-weight-bold" %>
-        <%= f.password_field :password_confirmation, autofocus: false, class: "form-control col-sm-8" %>
+      <div class="form-group row d-flex justify-content-center">
+        <%= f.label :password_confirmation, class: "col-sm-3 col-12 col-form-label text-sm-right font-weight-bold" %>
+        <%= f.password_field :password_confirmation, autofocus: false, class: "form-control col-sm-8 col-11" %>
       </div>
       <div class="form-group row mt-5">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-8 d-flex justify-content-center pl-0">
+        <div class="col-sm-3 col-12"></div>
+        <div class="col-sm-8 col-12 d-flex justify-content-center pl-0">
           <%= f.submit "Update", class: "btn btn-dark" %>
         </div>
       </div>
