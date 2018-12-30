@@ -11,7 +11,6 @@ body {
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
-  height: 77px;
   .modal-content {
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
@@ -80,16 +79,15 @@ body {
 }
 
 .landing-left {
+  padding-bottom: 10px;
   .introduce {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
     .h1 {
       line-height: 2.5rem;
     }
-    width: 600px;
-    height: 600px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #efefef;
-    border-radius: 10px;
     .discription {
       p{
         margin-bottom: 0;
@@ -102,7 +100,6 @@ body {
 
 .landing-right {
   .form-login {
-    width: 450px;
     form {
       padding: 0 40px;
       .btn-dark{
