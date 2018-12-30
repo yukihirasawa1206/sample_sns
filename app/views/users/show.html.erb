@@ -1,14 +1,23 @@
-<div class="row justify-content-md-center profile-wrapper">
-  <div class="col-md-4 text-center">
+<div class="row d-flex justify-content-center profile-wrapper">
+  <div class="col-sm-4 col-12 text-center">
     <%= image_tag avatar_url(@user), width: '152', height: '152', class: "round-img" %>
   </div>
-  <div class="col-md-8">
-    <div class="row">
-      <p class="username"><%= @user.name %></p>
-      <%= link_to 'Edit Profile', edit_user_registration_path(@user),
-        class: "btn btn-dark common-btn edit-profile-btn" %>
-        <!-- Button trigger modal -->
-        <button type="button" class="core-sprite setting" data-toggle="modal" data-target="#settingModal"></button>
+  <div class="col-sm-8 col-12">
+      <div class="text-sm-left text-center w-100">
+        <div class="row mt-3">
+          <div class="d-flex mx-auto mx-sm-0 justify-content-sm-start justify-content-center"> 
+            <p class="username"><%= @user.name %></p>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-sm-start justify-content-center align-items-center">
+            <%= link_to 'Edit Profile', edit_user_registration_path(@user),
+              class: "btn btn-dark common-btn edit-profile-btn" %>
+            <button type="button" class="core-sprite setting" data-toggle="modal" data-target="#settingModal"></button>
+          </div>
+        </div>
+        <div class="col-12 pl-sm-0">
+          <p class="email mt-3"><%= @user.email %></p>
+        </div>
+          
         <!-- Modal -->
         <div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-labelledby="settingModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -24,9 +33,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <p class="email"><%= @user.email %></p>
+        
       </div>
   </div>
 </div>
