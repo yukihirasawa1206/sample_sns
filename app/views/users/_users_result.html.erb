@@ -1,0 +1,18 @@
+<% if search.present? %>
+
+  <% search.each do |search_user| %>
+  
+    <%= link_to user_path(search_user), class: "no-text-decoration normal-color" do %>
+      <div id="users-result">
+        <%= image_tag avatar_url(search_user), class:"post-author-icon" %>
+        <%= search_user.name %>
+      </div>
+    <% end %>
+    
+  <% end %>
+  
+<% else %>
+  <div class="p-3">
+    No results found.
+  </div>
+<% end %>
