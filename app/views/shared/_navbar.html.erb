@@ -5,9 +5,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="form-inline my-2 my-lg-0 ml-md-auto">
-        <input class="form-control text-center mr-sm-2 common-btn" type="search" placeholder="Search" aria-label="Search">
-      </form>
+      <%= form_tag search_users_path, method: :get, class: "form-inline my-2 my-lg-0 ml-md-auto",
+        id: "users-search", remote: true do %>
+        <%= text_field_tag :term, params[:term], class:"form-control text-center mr-sm-2 common-btn",
+          placeholder: "Search", autocomplete: "off" %>
+        <div id="users-result"></div>
+      <% end %>
       <ul class="navbar-nav ml-md-auto ml-auto">
         <li class="nav-item"></li>
         <li class="nav-item">
