@@ -59,3 +59,4 @@ gem 'carrierwave', '~>1.0'
 gem 'cloudinary'
 gem 'dropzonejs-rails'
 gem "rest-client", ">= 1.8.0"
+gem 'will_paginate-bootstrap4'
