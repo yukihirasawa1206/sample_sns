@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/sample_sns
     docker:
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
@@ -21,6 +22,10 @@ jobs:
           - v1-dependencies-
           
       - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 120s
+          
+      - run:
           name: install dependencies
           command: bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
           
@@ -28,11 +33,7 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 120s
-
+          
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
@@ -42,7 +43,7 @@ jobs:
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
-            bundle exec rspec --format progress \
+            bundle exec rspec --format documentation\
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress \
