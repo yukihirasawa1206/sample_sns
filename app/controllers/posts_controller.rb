@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 			order("created_at desc")
     @post = Post.new
     @comment = Comment.new
-    @is_bookmarked = @post.is_bookmarked(current_user)
   end
   
   def create
