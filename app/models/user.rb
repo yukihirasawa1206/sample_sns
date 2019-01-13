@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :posts, dependent: :destroy
-  has_many :likes, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :posts,     dependent: :destroy
+  has_many :likes,     dependent: :destroy
+  has_many :comments,  dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   
   devise :database_authenticatable, :registerable,
@@ -23,6 +23,17 @@ class User < ApplicationRecord
   
   def self.search(term)
     where('name LIKE ?', "%#{term}%")
+  end
+  
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
   end
   
 end

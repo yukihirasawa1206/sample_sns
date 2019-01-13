@@ -11,11 +11,11 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
   
-  resources :posts, only: [:index, :show, :create, :destroy] do
-    resources :photos, only: [:create]
-    resources :likes, only: [:create, :destroy], shallow: true
-    resources :comments, only: [:index, :create, :destroy], shallow: true
-    resources :bookmarks, only: [:create, :destroy], shallow: true
+  resources :posts,       only: [:index, :show, :create, :destroy] do
+    resources :photos,    only: [:create]
+    resources :likes,     only: [:create, :destroy],         shallow: true
+    resources :comments,  only: [:index, :create, :destroy], shallow: true
+    resources :bookmarks, only: [:create, :destroy],         shallow: true
   end
   
 end
