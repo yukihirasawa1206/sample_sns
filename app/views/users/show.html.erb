@@ -14,11 +14,20 @@
                 class: "btn btn-dark common-btn edit-profile-btn" %>
               <button type="button" class="core-sprite setting" data-toggle="modal" data-target="#settingModal"></button>
             <% end %>
+            <%= render 'follow_form' %>
           </div>
         </div>
         <div class="col-12 pl-sm-0">
           <p class="email mt-3"><%= @user.email %></p>
         </div>
+        
+        <%= link_to following_user_path(@user) do %>
+          <strong><%= @user.following.count %></strong>following
+        <% end %>
+        <%= link_to followers_user_path(@user) do %>
+          <strong><%= @user.followers.count %></strong>followers
+        <% end %>
+        
         <!-- Modal -->
         <div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-labelledby="settingModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
