@@ -18,8 +18,8 @@ class UsersController < ApplicationController
       @user.destroy
     else
       flash[:alert] = "Something went wrong ..."
-      redirect_to root_path
     end
+    redirect_to root_path
   end
   
   def search
