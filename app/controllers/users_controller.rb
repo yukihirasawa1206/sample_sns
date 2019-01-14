@@ -12,10 +12,19 @@ class UsersController < ApplicationController
       includes(:photos, :likes, :comments) if @user == current_user
   end
   
+  def destroy
+    @user = User.find(params[:id])
+    if @user == current_user
+      @user.destroy
+    else
+      flash[:alert] = "Something went wrong ..."
+    end
+    redirect_to root_path
+  end
+  
   def search
     @search = User.search(params[:term])
     respond_to :js
   end
   
 end
-

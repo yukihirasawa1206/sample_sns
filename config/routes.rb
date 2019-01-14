@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
     controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
     
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :destroy] do
     get :search, on: :collection
   end
   

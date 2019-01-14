@@ -36,7 +36,7 @@ group :development, :test do
   gem 'rspec_junit_formatter'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'chromedriver-helper' unless ENV.key?('CIRCLECI')
 end
 
 group :development do
@@ -53,6 +53,7 @@ gem 'devise'
 gem 'bootstrap', '>= 4.1.2'
 gem 'jquery-rails'
 gem 'toastr-rails'
+gem 'data-confirm-modal'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'

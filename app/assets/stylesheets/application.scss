@@ -480,3 +480,12 @@ footer {
 #search-result-item:hover {
   background-color: #fafafa;
 }
+
+.modal-dialog {
+  .modal-footer {
+    .btn-default {
+      background-color: #343a40;
+      color: #fafafa;
+    }
+  }
+}
