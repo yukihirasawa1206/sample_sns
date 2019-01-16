@@ -1,12 +1,37 @@
-  <div class="row">
-    <div class="col-sm-6 user-list">
-    <% @users.each do |user| %>
-      <div class="avator-image">
-        <%= image_tag avatar_url(user), class: "post-author-icon" %>
-      </div>
-      <div class="user-info">
-        <%= user.name %>
-      </div>
-    <% end %>
-    </div>
-  </div>
+     <div class="row my-5">
+       <div class="col-sm-3"></div>
+       <div class="col-sm-6">
+          <% @users.each do |user| %>
+          
+          <div class="d-flex flex-column">
+          <%= link_to user_path(user), class: "normal-color no-text-decoration" do %>
+            <div class="row users-list">
+              <div class="d-flex align-items-center col-sm-3 avator-image">
+                <%= image_tag avatar_url(user), class: "user-list-icon" %>
+              </div>
+              <div class="d-flex align-items-center col-sm-6 user-info">
+                <%= user.name %>
+              </div>
+              <div class="d-flex align-items-center col-sm-3 follow">
+              <% unless user == current_user %>
+                <div id="follow_form">
+                <% if current_user.following?(user) %>
+                  <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),
+                    html: {method: :delete}) do |f| %>
+                    <%= f.submit "Unfollow", class: "btn btn-default" %>
+                  <% end %>
+                <% else %>
+                  <%= form_for(current_user.active_relationships.build) do |f| %>
+                    <div><%= hidden_field_tag :followed_id, user.id %></div>
+                    <%= f.submit "Follow", class: "btn btn-dark" %>
+                  <% end %>
+                <% end %>
+                </div>
+              <% end %>
+              </div>
+            </div>
+          <% end %>
+          </div>
+          <% end %>
+       </div>
+     </div> 
