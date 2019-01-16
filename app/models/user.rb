@@ -24,22 +24,22 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 50}
 
+  def follow(other_user)
+    following << other_user
+  end
+
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
   def self.search(term)
     where('name LIKE ?', "%#{term}%")
   end
 
-  def follow(other_user)
-    following << other_user
-  end
-  
-  def unfollow(other_user)
-    active_relationships.find_by(followed_id: other_user.id).destroy
-  end
-  
-  def following?(other_user)
-    following.include?(other_user)
-  end
-  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email    = auth.info.email
