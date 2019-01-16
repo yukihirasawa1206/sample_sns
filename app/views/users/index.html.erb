@@ -1,0 +1,12 @@
+  <div class="row">
+    <div class="col-sm-6 user-list">
+    <% @users.each do |user| %>
+      <div class="avator-image">
+        <%= image_tag avatar_url(user), class: "post-author-icon" %>
+      </div>
+      <div class="user-info">
+        <%= user.name %>
+      </div>
+    <% end %>
+    </div>
+  </div>
