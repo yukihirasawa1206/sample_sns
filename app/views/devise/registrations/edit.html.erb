@@ -2,20 +2,20 @@
   
   <div class="col-sm-2 left-col">
     <div class="list-group">
-      <%= link_to "Edit Profile",   "#",
-                                    class: "list-group-item list-group-item-action" %>
-      <%= link_to "Home",           root_path,
-                                    class: "list-group-item list-group-item-action" %>
-      <%= link_to "Log out",        destroy_user_session_path,
-                                    method: :delete,
-                                    class: "list-group-item list-group-item-action" %>
-      <%= link_to "Delete account", user_path(@user),
-                                    method: :delete,
-                                    data: { confirm:     "Are you sure?",
+      <%= link_to "Edit Profile", "#", class: "list-group-item list-group-item-action" %>
+      <%= link_to "Home", root_path, class: "list-group-item list-group-item-action" %>
+      <%= link_to "Log out",         destroy_user_session_path,
+                                     method: :delete,
+                                     class: "list-group-item list-group-item-action" %>
+      <%= link_to user_path(@user),  method: :delete,
+                                     data: { confirm:     "Are you sure?",
                                             title:       "Delete account", 
                                             verify:      "#{@user.name}",
                                             verify_text: "Please type in the your name.(#{@user.name})"},
-                                    class: "list-group-item list-group-item-action" %>
+                                     class: "list-group-item list-group-item-action" do %>
+                                     Delete account <i class="fas fa-exclamation-triangle ml-auto"></i>
+      <% end %>
+      
     </div>
   </div>
   

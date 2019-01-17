@@ -3,7 +3,7 @@
   <% search.each do |search_user| %>
   
     <%= link_to user_path(search_user), class: "no-text-decoration normal-color" do %>
-      <div id="users-result">
+      <div class="search-result-item p-2" id="users-result-<%= search_user.id %>">
         <%= image_tag avatar_url(search_user), class:"post-author-icon" %>
         <%= search_user.name %>
       </div>
