@@ -12,28 +12,54 @@
         <div id="users-result"></div>
       <% end %>
       <ul class="navbar-nav ml-md-auto ml-auto">
-        <li class="nav-item"></li>
         <li class="nav-item">
-          <%= link_to "Explore", users_path, class: "nav-link core-sprite explore-icon hide-text" %>
+          <%= link_to users_path, class: "nav-link" do %>
+            <div class="navbar-icon text-center"><i class="fas fa-users"></i></div>
+            <div class="fa-text text-center">Users</div>
+          <% end %>
         </li>
         <li class="nav-item">
-          <a class="nav-link core-sprite notification-icon hide-text" data-toggle="modal" data-target="#notification"></a>
+          <%= link_to "#", class: "nav-link", data: {toggle: "modal", target: "#notification"} do %>
+            <div class="navbar-icon text-center"><i class="far fa-bell"></i></div>
+            <div class="fa-text text-center">Notification</div>
+          <% end %> 
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
+          <%= link_to "#", class: "nav-link", data: {toggle: "modal", target: "#menu"} do %>
+            <div class="navbar-icon text-center"><i class="far fa-compass"></i></div>
+            <div class="fa-text text-center">Menu</div>
+          <% end %>
         </li>
       </ul>
     </div>
-        <!-- Modal -->
     <div class="modal fade" id="notification" tabindex="-1" role="dialog" aria-labelledby="notificationLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content ml-auto">
           <div class="modal-header">
-            <h5 class="modal-title" id="notificationLabel">My Favorite Post</h5>
+            <h5 class="modal-title" id="notificationLabel">Notification</h5>
           </div>
           <div class="modal-body">
             <p>Notification is not exist.</p>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="menu" tabindex="-1" role="dialog" aria-labelledby="menuLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content ml-auto">
+          <div class="modal-header">
+            <h5 class="modal-title" id="notificationLabel">Menu</h5>
+          </div>
+            <div class="list-group">
+              <%= link_to "Profile page", user_path(current_user),
+                class: "list-group-item list-group-item-action" %>
+              <%= link_to "Edit profile", edit_user_registration_path,
+                class: "list-group-item list-group-item-action" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "list-group-item list-group-item-action" %>
+            </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
           </div>
