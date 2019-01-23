@@ -1,16 +1,14 @@
 <% likes.each.with_index do |like, index| %>
-  <strong>
   <% if likes.size == 1 %>
-    <%= like.user.name %></strong> likes this
+    <strong><%= like.user.name %></strong> likes this
   <% elsif like == likes.last %>
-    </strong>and
-    <strong><%= + like.user.name %></strong> like this
+    and<strong><%= + like.user.name %></strong> like this
   <% elsif index > 1 %>
-    </strong><%= "and" + (likes.size-index) + "others" %> like this
+    <%= "and" + (likes.size-index) + "others" %> like this
     <% break %>
   <% elsif index == likes.size-2 || index == 1 %>
-    <%= like.user.name %>
+    <strong><%= like.user.name %></strong>
   <% else %>
-    <%= like.user.name + ", " %>
+    <strong><%= like.user.name + ", " %></strong>
   <% end %>
 <% end %>
