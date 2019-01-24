@@ -12,7 +12,7 @@ RSpec.feature "FollowUsers", type: :feature do
     visit user_path(other_user)
     expect{
       click_button "Follow"
-      sleep 3
+      sleep 1
     }.to change(user.following, :count).by(1)
   end
   
@@ -23,8 +23,7 @@ RSpec.feature "FollowUsers", type: :feature do
     click_button "Follow"
     expect{
       click_button "Unfollow"
-      sleep 3
-      visit user_path(other_user)
+      sleep 1
     }.to change(user.following, :count).by(-1)
     
   end
